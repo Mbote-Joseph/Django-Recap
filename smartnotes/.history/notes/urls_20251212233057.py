@@ -1,4 +1,3 @@
-from notes.views import PopularNotesListView
 # Copyright 2025 josephmbote
 # 
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,5 @@ from . import views
 
 urlpatterns = [
     path('', views.NotesListView.as_view()),
-    path('/<int:pk>', views.NotesDetailView.as_view()),
-    path('/popular', views.PopularNotesListView.as_view())
+    path('/<int:pk>', views.note_details)
 ]

@@ -1,4 +1,3 @@
-from notes.views import PopularNotesListView
 # Copyright 2025 josephmbote
 # 
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,11 +12,3 @@ from notes.views import PopularNotesListView
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('', views.NotesListView.as_view()),
-    path('/<int:pk>', views.NotesDetailView.as_view()),
-    path('/popular', views.PopularNotesListView.as_view())
-]

@@ -34,10 +34,10 @@ class BookDetailsView(DetailView):
 #     return render(request, "books/book.html", {'book_detail' : book_detail})
 
 
-# class BookCreateView(CreateView):
-#     form_class = BookForm
-#     template_name = 'books/form.html' # Create this template in your templates folder
-#     success_url = reverse_lazy('books/index.html') # Change to your success URL name
+class BookCreateView(CreateView):
+    form_class = BookForm
+    template_name = 'books/form.html' # Create this template in your templates folder
+    success_url = reverse_lazy('success_page_url_name') # Change to your success URL name
 
-#     # Optional: Override http_method_names if you only want 'get' and 'post'
-#     http_method_names = ['get', 'post', 'head', 'options']
+    # Optional: Override http_method_names if you only want 'get' and 'post'
+    http_method_names = ['get', 'post', 'head', 'options']

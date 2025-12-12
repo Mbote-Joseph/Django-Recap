@@ -1,10 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
-from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView
-
-from books.forms import BookForm
+from django.views.generic import ListView, DetailView, FormView
 
 from .models import Books
 
@@ -33,11 +30,7 @@ class BookDetailsView(DetailView):
 #         raise Http404("Book Doesn't Exist")
 #     return render(request, "books/book.html", {'book_detail' : book_detail})
 
-
-# class BookCreateView(CreateView):
-#     form_class = BookForm
-#     template_name = 'books/form.html' # Create this template in your templates folder
-#     success_url = reverse_lazy('books/index.html') # Change to your success URL name
-
-#     # Optional: Override http_method_names if you only want 'get' and 'post'
-#     http_method_names = ['get', 'post', 'head', 'options']
+class BookFormView(FormView):
+    model = Books
+    http_method_names = ['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace']
+    

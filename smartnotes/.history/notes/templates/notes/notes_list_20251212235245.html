@@ -1,0 +1,16 @@
+{% load static%}
+<html>
+    <head>
+        <title> Django Home </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"
+    </head>
+
+    <body>
+        <h1>Welcome to Smartnotes</h1>
+        {% for note in notes %}
+         <h2> {{note.title}} </h2>
+
+        {% endfor %}
+    </body>
+
+</html>

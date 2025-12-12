@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title> Books App </title>
+    </head>
+
+    <body>
+        <h1>Welcome to Books Apps</h1>
+        <table>
+            <th>
+                <td> Title </td>
+                <td> Author </td>
+                <td> ISBN </td>
+                <td> Description </td>
+                <td> Date Created </td>
+            </th>
+        {% for book in books %}
+            <tr>
+                <th> {{book.title}} </th>
+                <td> {{book.author}} </td>
+                <td> {{book.isbn}} </td>
+                <td> {{book.description}}</td>
+                <td> {{book.created}} </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </body>
+
+</html>

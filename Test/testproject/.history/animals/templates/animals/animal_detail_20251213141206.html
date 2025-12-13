@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>{{title}}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">{{ animal.name }} ({{ animal.species }})</h1>
+            <p class="lead">Age: {{ animal.age }}</p>
+            <p class="lead">Location: {{ animal.location }}</p>
+            <hr class="my-4">
+            <p>More information about {{ animal.name }} will be available soon.</p>
+            <a class="btn btn-primary btn-lg" href="/animals/" role="button">Back to Animals List</a>
+        </div>
+    </div>
+{% endblock %}

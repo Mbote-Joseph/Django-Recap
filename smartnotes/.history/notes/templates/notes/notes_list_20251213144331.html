@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+        <h1>Welcome to Smartnotes</h1>
+        {% for note in notes %}
+            <div class="list-group">
+                <li class="list-group-item">{{note.title}} </li>
+                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                    The current link item
+                </a>
+            </div>
+        {% endfor %}
+
+{% endblock %}

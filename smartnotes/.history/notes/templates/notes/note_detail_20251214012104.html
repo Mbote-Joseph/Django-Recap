@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-4">
+         <div class="card">
+                <h5 class="card-header">{{note.title}} </h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{note.title}} </h5>
+                    <p class="card-text">{{note.text}} </p>
+                    <p class="card-text">{{note.user}} </p>
+                    <p class="card-text">{{note.created}} </p>
+                    <form method="post" action="{% url 'note.add_like' pk=note.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline"> <i class="fa-regular fa-heart"></i> </button> <span class="card-text">{{note.likes}} </span>
+                    </form>
+                    {% comment %} <a href="{% url 'note.add_like' pk=note.id %}" > <i class="fa-regular fa-heart"></i>  </a> <span class="card-text">{{note.likes}} </span> {% endcomment %}
+                    <br>
+                    <a href="{% url 'note.edit' pk=note.id %}" class="btn btn-warning">Edit Note</a>
+                    <a href="{% url 'note.delete' pk=note.id %}" class="btn btn-danger">Delete Note</a>
+                    <a href="{% url 'notes' %}" class="btn btn-primary">All Notes</a>
+                </div>
+            </div>
+    </div>
+{% endblock %}

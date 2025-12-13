@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-4">
+         <div class="card">
+                <h5 class="card-header">{{note.title}} </h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{note.title}} </h5>
+                    <p class="card-text">{{note.text}} </p>
+                    <p class="card-text">{{note.created}} </p>
+                    <i class="fa-regular fa-heart"></i> <span class="card-text">{{note.likes}} </span>
+                    <br>
+                    <a href="{% url 'notes' %}" class="btn btn-primary">All Notes</a>
+                </div>
+            </div>
+    </div>
+{% endblock %}

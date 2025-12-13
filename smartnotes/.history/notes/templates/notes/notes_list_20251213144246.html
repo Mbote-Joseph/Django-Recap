@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+        <h1>Welcome to Smartnotes</h1>
+        {% for note in notes %}
+            <ul class="list-group">
+                <li class="list-group-item">{{note.title}} </li>
+                
+            </ul>
+        {% endfor %}
+
+{% endblock %}

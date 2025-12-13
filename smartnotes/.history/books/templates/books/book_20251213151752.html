@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title> {{book.title}} </title>
+    </head>
+
+    <body>
+       
+        <h1>{{book.title}} Book</h1>
+        
+            <span>
+                <p> Title:  {{book.title}} </p>
+                <p> Author:  {{book.author}} </p>
+                <p> ISBN: {{book.isbn}} </p>
+                <p> Description:  {{book.description}}</p>
+                <p> Date Created: {{book.created}} </p>
+            </span>
+        
+    </body>
+
+</html>
+
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card text-center">
+  <div class="card-header">
+    {{book.title}} Book
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{book.title}}</h5>
+    <p class="card-text">{{book.author}}</p>
+    <p class="card-text">{{book.isbn}}</p>
+    <p class="card-text">{{book.description}}</p>
+   
+    <a href="/books" class="btn btn-primary">All Books</a>
+  </div>
+  <div class="card-footer text-body-secondary">
+    {{book.created}}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,4 +1,3 @@
-from django import forms
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
 
@@ -29,39 +28,15 @@ class AnimalCreateView(CreateView):
         "title": " Create Animal Page"
     }
     success_url = '/animals'
-    labels = {
-        'name': 'Animal Name',
-        'species': 'Animal Species',
-        'age': 'Animal Age',
-        'location': 'Animal Location',
-    }
-    widgets ={
-        'name': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter Animal Name'}),
-        'species': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter Animal Species'}),
-        'age': forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Enter Animal Age'}),
-        'location': forms.Select(attrs={'class':'form-control', 'placeholder':'Select Animal Location'}),
-    }
     
 class AnimalUpdateView(UpdateView):
     model = Animal
-    fields = '__all__'
+    fields = ['name', 'species', 'age', 'description']
     template_name = "animals/animal_form.html"
     extra_context = {
         "title": " Update Animal Page"
     }
     success_url = '/animals'
-    labels = {
-        'name': 'Animal Name',
-        'species': 'Animal Species',
-        'age': 'Animal Age',
-        'location': 'Animal Location',
-    }
-    widgets ={
-        'name': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter Animal Name'}),
-        'species': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter Animal Species'}),
-        'age': forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Enter Animal Age'}),
-        'location': forms.Select(attrs={'class':'form-control', 'placeholder':'Select Animal Location'}),
-    }
     
 class AnimalDeleteView(DeleteView):
     model = Animal

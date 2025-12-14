@@ -44,7 +44,7 @@ class AnimalCreateView(CreateView):
     
 class AnimalUpdateView(UpdateView):
     model = Animal
-    fields = '__all__'
+    fields = ['name', 'species', 'age', 'description']
     template_name = "animals/animal_form.html"
     extra_context = {
         "title": " Update Animal Page"

@@ -14,7 +14,7 @@
             <p>More information about {{ animal.name }} will be available soon.</p>
 
             <a class="btn btn-success btn-lg" href="{% url 'animal.edit' pk=animal.id %}" role="button">Edit Animal</a>
-            <a class="btn btn-danger btn-lg" href="{% url 'animal.delete' pk=animal.id %}" role="button">Delete Animal</a>
+            <a class="btn btn-danger btn-lg" href="{% url 'animal.delete' %}" role="button">Delete Animal</a>
 
             <hr>
             <a class="btn btn-primary btn-lg" href="/animals" role="button">Back to Animals List</a>

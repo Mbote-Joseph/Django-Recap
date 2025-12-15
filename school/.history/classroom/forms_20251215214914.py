@@ -1,0 +1,64 @@
+# Copyright 2025 josephmbote
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#     https://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from django import forms
+from .models import ClassRoom
+
+class ClassroomForm(forms.ModelForm):
+    class Meta:
+        model = ClassRoom
+        fields = ('name', 'stream','focus','students', 'uniform', 'classteacher')
+        widgets = {
+            'name': forms.TextInput(attrs={
+                "class": "form-control my-1",
+                'placeholder': 'Enter Level of the Class',
+                'style': 'max-width:500px'
+            }),
+            'stream': forms.Select(attrs={
+                "class": "form-control my-1",
+                'placeholder': 'Select the stream',
+                'style':'max-width:500px'
+            }),
+            'focus': forms.Select(attrs={
+                'class':'form-control my-1',
+                'placeholder':'Enter the Focus Area of that Stream',
+                'style':'max-width:500px'
+            }),
+            'students': forms.NumberInput(attrs={
+                'class': 'form-control my-2',
+                'placeholder': 'Enter number of students',
+                'style': 'max-width: 500px;',
+                'min': 1,
+                'max': 60
+            }),
+            'uniform': forms.Select(attrs={
+                'class': 'form-control my-1',
+                'placeholder': 'Select the Students Uniform of that stream',
+                'style': 'max-width:500px'
+            }),
+            'classteacher': forms.TextInput(attrs={
+                'class': 'form-control my-1',
+                'placeholder': 'Enter the Class Teacher of that stream',
+                'style': 'max-width:500px'
+            })
+        }
+        
+        labels = {
+            'name': "Class level",
+            'stream': "Class Stream",
+            'focus': 'Focus Area',
+            'students': 'Number of students',
+            'uniform': 'Students Uniform Color',
+            'classteacher': "Class Teacher"
+        }

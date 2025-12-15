@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+<div class="container">
+{% block content %}
+<div class="card m-lg-5">
+  <div class="card-header">
+    {{ classroom.name }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> Class:  {{ classroom.name }}</h5>
+    <p class="card-text">Class Stream :  {{ classroom.stream }}</p>
+    <p class="card-text">Class Focus Area:  {{ classroom.focus }}</p>
+    <p class="card-text">No. Students: {{ classroom.students}}</p>
+    <p class="card-text">Class uniform: {{ classroom.uniform }}</p>
+    <p class="card-text">Class Teacher: {{ classroom.classteacher }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-body-secondary">
+    {{ classroom.classteacher }}
+  </div>
+</div>
+{% endblock %}
+</div>

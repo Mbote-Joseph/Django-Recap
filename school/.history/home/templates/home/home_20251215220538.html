@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+ 
+    <h1 class="text-center my-5"> Welcome to the School System</h1>
+
+    <img class="img-fluid d-block mx-auto"  style="max-width:90%" src={% static '/images/classroom.jpg' %} alt="Classroom" />
+
+    <div class="text-center">
+        <a href="{% url 'classroom' %}" class="btn btn-primary">View all Classes</a>
+        <a href="{% url 'classroom.edit' pk=classroom.id %}" class="btn btn-success">Add A Class</a>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container my-4">
+ 
+    <h1> Welcome to the School System</h1>
+    <h2> Class Rooms </h2>
+
+    
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col"> Class level</th>
+        <th scope="col"> Stream </th>
+        <th scope="col">Focus Area</th>
+        <th scope="col">No. of Students</th>
+        <th scope="col">Uniform Color</th>
+        <th scope="col">Class Teacher</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for class in classrooms %}
+        <tr>
+        <th scope="row">1</th>
+        <td>{{ classroom.name}} </td>
+        <td>{{ classroom.stream}} </td>
+        <td>{{ classroom.focus}} </td>
+        <td>{{ classroom.students}} </td>
+        <td>{{ classroom.uniform}} </td>
+        <td>{{ classroom.classteacher}} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+   
+
+</div>
+
+{% endblock %}

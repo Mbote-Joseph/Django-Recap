@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container my-4">
+ 
+    <h1> Welcome to the School System</h1>
+    <h2> Class Rooms </h2>
+
+    <a href="{% url 'class.add' %}" class="btn btn-success"> Add New Class </a>
+    
+    <table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col"> Class level</th>
+        <th scope="col"> Stream </th>
+        <th scope="col">Focus Area</th>
+        <th scope="col">No. of Students</th>
+        <th scope="col">Uniform Color</th>
+        <th scope="col">Class Teacher</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for classroom in classrooms %}
+        <tr>
+            <th scope="row"> {{classroom.pk}} </th>
+            <td>{{ classroom.name}} </td>
+            <td>{{ classroom.stream}} </td>
+            <td>{{ classroom.focus}} </td>
+            <td>{{ classroom.students}} </td>
+            <td>{{ classroom.uniform}} </td>
+            <td>{{ classroom.classteacher}} </td>
+            <td>
+                <a href="{% url 'classroom.details' pk=classroom.id %}" class="btn btn-primary"> View </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+   
+
+</div>
+
+{% endblock %}
